@@ -1,0 +1,748 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    scrollbar-gutter: stable; /* Garante que o menu não mude de tamanho ou dê "pulos" entre as páginas */
+}
+
+/* NAVBAR / HEADER */
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    max-width: center;
+    margin:0 auto;
+    padding: center;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 30px;
+    flex: 10;
+}
+
+.nav-left { justify-content: flex-end; padding-right: 40px; }
+.nav-right { justify-content: flex-start; padding-left: 40px; }
+
+.nav-container a {
+    text-decoration: none;
+    color: #032b53;
+    font-weight: bold;
+    font-size: 25px;
+    transition: color 0.3s;
+}
+
+.nav-container a:hover, .nav-container a.active {
+    color: #129ca6;
+}
+
+.nav-container a.active {
+    border-bottom: 3px solid #129ca6;
+    padding-bottom: 5px;
+}
+
+.logo-container {
+    z-index: 15;
+}
+
+.logo-img {
+    height: 125px;
+    display: block;
+}
+
+/* BANNER PRINCIPAL (HERO) */
+.hero-section {
+    background-image: url('banner-principal.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    position: relative;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.btn-green {
+    display: inline-block;
+    background-color: #63be11;
+    color: white;
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-green:hover {
+    background-color: #52a00e;
+}
+
+/* SEÇÃO DE PRODUTOS */
+.products-section {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-section h2 {
+    color: #032b53;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 320px;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+}
+
+.card-info h3 {
+    font-size: 18px;
+    color: #333333;
+    text-transform: lowercase;
+    margin-bottom: 15px;
+}
+
+.more-details {
+    color: #129ca6;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #129ca6;
+    padding-bottom: 20px;
+}
+
+/* SEÇÃO DE ORÇAMENTO */
+.budget-section {
+    background-color: #129ca6;
+    color: white;
+    padding: 40px 20px;
+}
+
+.budget-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.budget-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.budget-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.budget-form {
+    flex: 2;
+    min-width: 300px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;
+}
+
+.btn-green-submit {
+    width: 100%;
+    background-color: #63be11;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-green-submit:hover {
+    background-color: #52a00e;
+}
+
+.budget-contacts {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    min-width: 250px;
+}
+
+.btn-whatsapp {
+    background-color: #63be11;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #52a00e;
+}
+
+.phone-link {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* RODAPÉ */
+.main-footer {
+    background-color: #032b53;
+    color: white;
+    padding: 30px 20px 10px 20px;
+    border-top: 5px solid #d9534f;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-socials p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-socials a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.footer-socials a i {
+    margin-right: 8px;
+}
+
+.footer-qr img {
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    color: #aaaaaa;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 10px;
+}
+
+/* RESPONSIVIDADE (MOBILE) */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-left, .nav-right {
+        justify-content: center;
+        padding: 0;
+        width: 100%;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .budget-content {
+        flex-direction: column;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   PÁGINA DE BRINQUEDOS (CARIOCA PARK) - VISUAL ORIGINAL CONSOLIDADO
+   ========================================================================== */
+
+.page-title-section {
+    background-color: #f7f9fa;
+    text-align: center;
+    padding: 50px 20px;
+    border-bottom: 2px solid #eef2f3;
+}
+
+.page-title-section h2 {
+    color: #034263;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.page-title-section p {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.toys-details-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.toy-detail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.toy-detail-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    align-items: center;
+}
+
+.toy-detail-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.toy-detail-img {
+    flex: 1;
+    min-width: 45%;
+    max-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f4f6;
+}
+
+.toy-detail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.toy-detail-info {
+    flex: 1;
+    padding: 40px;
+}
+
+.toy-detail-info h3 {
+    color: #034263;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+.toy-detail-info .description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.specs-list li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.specs-list li i {
+    color: #16b9db;
+    width: 20px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.btn-green-action, .btn-whatsapp-action {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-green-action {
+    background-color: #79b900;
+    color: white;
+}
+
+.btn-green-action:hover {
+    background-color: #649a00;
+    transform: translateY(-2px);
+}
+
+.btn-whatsapp-action {
+    background-color: #25d366;
+    color: white;
+}
+
+.btn-whatsapp-action:hover {
+    background-color: #1ebd58;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .toy-detail-card, .toy-detail-card:nth-child(even) {
+        flex-direction: column;
+    }
+    
+    .toy-detail-img {
+        width: 100%;
+        height: 280px;
+    }
+    
+    .toy-detail-info {
+        padding: 25px 20px;
+    }
+    
+    .page-title-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ==========================================================================
+   PÁGINA SOBRE NÓS (CARIOCA PARK)
+   ========================================================================== */
+
+.about-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.about-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1.2;
+}
+
+.about-text h3 {
+    color: #032b53;
+    font-size: 1.8rem;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.about-text h3:first-child {
+    margin-top: 0;
+}
+
+.about-text p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Tópicos de diferenciais */
+.about-points {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.about-points li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    line-height: 1.5;
+}
+
+.about-points li i {
+    color: #129ca6;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    width: 25px;
+    text-align: center;
+}
+
+/* Caixa da foto lateral */
+.about-img-box {
+    flex: 0 0 40%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: 400px;
+}
+
+.about-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-img-box {
+        width: 100%;
+        height: 250px;
+    }
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+/* ==========================================================================
+   PÁGINA DE CONTATO (CARIOCA PARK)
+   ========================================================================== */
+
+.contact-page-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.contact-page-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contact-info-box {
+    flex: 1.2;
+}
+
+.contact-hours-box {
+    flex: 0.8;
+    background-color: #f7f9fa;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #eef2f3;
+}
+
+.contact-page-section h3 {
+    color: #032b53;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-intro {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Cards dos Canais de Atendimento */
+.contact-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.channel-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #f0f4f6;
+}
+
+.channel-card i {
+    font-size: 2.2rem;
+    width: 50px;
+    text-align: center;
+}
+
+.channel-card .icon-wpp { color: #25d366; }
+.channel-card .icon-phone { color: #129ca6; }
+.channel-card .icon-insta { color: #e1306c; }
+
+.channel-card h4 {
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.channel-card p {
+    color: #777;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+}
+
+.channel-card a {
+    color: #129ca6;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.channel-card a:hover {
+    text-decoration: underline;
+}
+
+/* Itens de Informações Úteis */
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item i {
+    color: #129ca6;
+    font-size: 1.3rem;
+    margin-top: 3px;
+}
+
+.info-item h4 {
+    color: #333;
+    font-size: 1.05rem;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact-page-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .contact-info-box, .contact-hours-box {
+        width: 100%;
+        flex: none;
+    }
+}

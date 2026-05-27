@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carioca Park - Locação de Brinquedos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ícone da barra do navegador (Favicon) -->
+    <link rel="icon" type="image/jpeg" href="logo-carioca-park.png">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="active">Início</a>
+                <a href="brinquedos.html">Brinquedos</a>
+            </div>
+            
+            <div class="logo-container">
+                <img src="logo-carioca-park.png" alt="Carioca Park Logo" class="logo-img">
+            </div>
+            
+            <div class="nav-right">
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="contato.html">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>A Alegria Inflável para sua Festa!</h1>
+                <a href="#orcamento" class="btn-green">Alugar Agora!</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <h2>Nossos Brinquedos</h2>
+        
+        <div class="cards-container">
+            <div class="product-card">
+                <div class="card-img-container">
+                    <img src="toboga-premium.jpg" alt="Tobogã Premium 2 em 1">
+                </div>
+                <div class="card-info">
+                    <h3>tobogã premium 2 em 1</h3>
+                    <a href="brinquedos.html" class="more-details">mais detalhes</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <img src="pula-pula.jpg" alt="Pula-Pula Premium">
+                </div>
+                <div class="card-info">
+                    <h3>pula-pula premium</h3>
+                    <a href="brinquedos.html" class="more-details">mais detalhes</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-img-container">
+                    <img src="foto-combo.jpg" alt="Combo Carioca Park">
+                </div>
+                <div class="card-info">
+                    <h3>combo tobogã + pula-pula</h3>
+                    <a href="brinquedos.html" class="more-details">mais detalhes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="orcamento" class="budget-section">
+        <div class="budget-container">
+            <h2>Solicite um Orçamento</h2>
+            
+            <div class="budget-content">
+                <form class="budget-form" onsubmit="enviarParaWhatsApp(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" placeholder="Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="data">Data da festa</label>
+                            <input type="date" id="data" value="2026-05-26" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="brinquedo">Tipo de brinquedo</label>
+                            <select id="brinquedo" required>
+                                <option value="" disabled selected>Tipo de brinquedo</option>
+                                <option value="Tobogã Premium 2 em 1">Tobogã Premium 2 em 1</option>
+                                <option value="Pula-Pula Premium">Pula-Pula Premium</option>
+                                <option value="Combo Tobogã + Pula-Pula">Combo Tobogã + Pula-Pula</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="convidados">Número de convidados</label>
+                            <input type="number" id="convidados" placeholder="Convidados" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-green-submit">Alugar Agora!</button>
+                </form>
+                
+                <div class="budget-contacts">
+                    <a href="https://wa.me/5521977342522" target="_blank" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Whatsapp
+                    </a>
+                    <a href="tel:21977342522" class="phone-link">
+                        <i class="fas fa-phone-alt"></i> 21 97734-2522
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-socials">
+                <p>Redes sociais</p>
+                <a href="https://facebook.com/carioca_park" target="_blank"><i class="fab fa-facebook"></i> carioca_park</a>
+                <a href="https://instagram.com/carioca_park" target="_blank"><i class="fab fa-instagram"></i> carioca_park</a>
+            </div>
+            
+            <div class="footer-qr">
+                <img src="qr-code.png" alt="QR Code Carioca Park">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Carioca Park. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT QUE FAZ A MÁGICA ACONTECER -->
+    <script>
+    function enviarParaWhatsApp(event) {
+        event.preventDefault();
+        
+        // Pega os valores digitados no formulário
+        const nome = document.getElementById('nome').value;
+        const dataInput = document.getElementById('data').value;
+        const brinquedo = document.getElementById('brinquedo').value;
+        const convidados = document.getElementById('convidados').value;
+        
+        // Formata a data para o padrão brasileiro (DD/MM/AAAA)
+        const dataFormatada = dataInput.split('-').reverse().join('/');
+        
+        // Monta o texto da mensagem
+        const texto = `Olá! Gostaria de solicitar um orçamento para o Carioca Park:%0A%0A` +
+                      `*Nome:* ${nome}%0A` +
+                      `*Data da Festa:* ${dataFormatada}%0A` +
+                      `*Brinquedo:* ${brinquedo}%0A` +
+                      `*Nº de Convidados:* ${convidados}`;
+        
+        // Número do WhatsApp do Carioca Park
+        const numeroUrl = "https://wa.me/5521977342522?text=" + texto;
+        
+        // Abre o WhatsApp em uma nova aba
+        window.open(numeroUrl, '_blank');
+    }
+    </script>
+
+</body>
+</html>
