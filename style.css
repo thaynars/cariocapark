@@ -21,18 +21,18 @@ body {
 }
 
 .nav-container {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    max-width: center;
-    margin:0 auto;
-    padding: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
 }
 
 .nav-left, .nav-right {
     display: flex;
     gap: 30px;
-    flex: 10;
+    flex: 1;
 }
 
 .nav-left { justify-content: flex-end; padding-right: 40px; }
@@ -336,17 +336,46 @@ body {
     padding-top: 10px;
 }
 
-/* RESPONSIVIDADE (MOBILE) */
+/* RESPONSIVIDADE CORRIGIDA (MOBILE EM LINHA RETA) */
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
-        gap: 15px;
+        display: flex;
+        flex-direction: row;        /* Força a barra a ficar em linha reta */
+        flex-wrap: nowrap;          /* Impede totalmente a quebra de linha */
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 8px;          /* Otimiza o espaço lateral nas bordas do celular */
     }
+
     .nav-left, .nav-right {
-        justify-content: center;
-        padding: 0;
-        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;                  /* Reduz o espaçamento entre os links */
+        flex: unset;                /* Remove a divisão rígida antiga */
     }
+
+    .nav-left { 
+        justify-content: flex-end; 
+        padding-right: 0; 
+        margin-right: -5px;         /* Aproxima sutilmente os links da esquerda do logo */
+    }
+    
+    .nav-right { 
+        justify-content: flex-start; 
+        padding-left: 0; 
+        margin-left: -5px;          /* Aproxima sutilmente os links da direita do logo */
+    }
+
+    .nav-container a {
+        font-size: 15px;            /* Diminui o texto proporcionalmente para caber na tela */
+        white-space: nowrap;        /* Evita que textos compostos quebrem internamente */
+    }
+
+    .logo-img {
+        height: 50px;               /* Diminui o tamanho do logotipo para manter a harmonia */
+    }
+
+    /* Outros elementos responsivos mantidos */
     .form-row {
         flex-direction: column;
         gap: 15px;
